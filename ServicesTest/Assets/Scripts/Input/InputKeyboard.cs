@@ -7,7 +7,7 @@ public class InputKeyboard : InterfaceInput {
     public Vector3 Movement()
     {
         direction.x = Input.GetAxisRaw("Horizontal");
-        direction.y = Input.GetAxisRaw("Vertical");
+        direction.y = 0;
         direction.z = 0;
 
         if (direction.magnitude > 1)

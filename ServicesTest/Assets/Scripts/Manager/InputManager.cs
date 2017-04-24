@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         input = new InputKeyboard();
 #elif UNITY_ANDROID
-        input = new InputAndroid();
+        input = new InputTouchscreen();
 #endif
 
     }
