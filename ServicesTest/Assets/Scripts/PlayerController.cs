@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Start () {
         rb = GetComponent<Rigidbody>();
-        xLimit = 20;
+        xLimit = 10;
         yLimit = 18;
 	}
 	

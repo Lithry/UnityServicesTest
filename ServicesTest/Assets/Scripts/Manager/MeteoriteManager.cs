@@ -28,7 +28,7 @@ public class MeteoriteManager : MonoBehaviour {
 
         if (respawn > respawnDelay)
         {
-            respawnPos = new Vector3(Random.Range(-18, 19), 25, 20);
+            respawnPos = new Vector3(Random.Range(-10, 10), 25, 20);
 
             MeteoriteBuilder.instance.Build("Meteorite", respawnPos, new Vector3(0, 0, 0));
             respawn = 0;
