@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider coll) {
-        StartCoroutine(Dead());            
+        StartCoroutine(Dead());
+        Analytics.CustomEvent("GameOver", new Dictionary<string, object> { { "score", Score.score } });
     }
 
     IEnumerator Dead() {
