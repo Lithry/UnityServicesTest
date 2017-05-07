@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Advertisements;
 
 public class PlayerFactory : MonoBehaviour {
     static public PlayerFactory instance = null;
@@ -14,7 +13,6 @@ public class PlayerFactory : MonoBehaviour {
 
 
     public GameObject Create(string type) {
-        ShowAd();
         switch (type)
         {
             case "Player":
@@ -32,18 +30,9 @@ public class PlayerFactory : MonoBehaviour {
 
     IEnumerator LoadGameOver()
     {
-        ShowAd();
         yield return new WaitForSeconds(1f);
+        AdsManager.instance.ShowAd();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("GameOver");
-    }
-
-    public void ShowAd()
-    {
-        
-        if (Advertisement.IsReady())
-        {
-            Debug.Log("Ads");
-            Advertisement.Show();
-        }
     }
 }

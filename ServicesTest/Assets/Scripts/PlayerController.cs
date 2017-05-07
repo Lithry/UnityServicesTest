@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         xLimit = 10;
         yLimit = 18;
+
+        
 	}
 	
 	void Update () {
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         Limits();
 
         Score.score += 0.02f;
+
     }
 
     public void SetSpeed(float spd) {
@@ -58,6 +61,6 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator Dead() {
         yield return new WaitForSeconds(0.15f);
-        PlayerFactory.instance.Recycle(gameObject); 
+        PlayerFactory.instance.Recycle(gameObject);
     }
 }
