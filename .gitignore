@@ -3,3 +3,6 @@
 /ServicesTest/*.csproj
 /ServicesTest/*.sln
 /ServicesTest/.vs/ServicesTest/v14
+/ServicesTest/debug.log
+/*.apk
+/*.keystore
